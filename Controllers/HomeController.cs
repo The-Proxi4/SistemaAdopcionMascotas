@@ -1,31 +1,25 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SistemaAdopcionMascotas.Models;
-
-namespace SistemaAdopcionMascotas.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
+    [HttpGet]
+    public IActionResult FormularioMascota()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult RegistrarMascota(string nombre, int edad, string tipo, string estadoAdopcion)
     {
-        return View();
+        // Aquí puedes agregar la lógica para guardar la mascota en la base de datos.
+
+        // Redirigir o devolver una vista de éxito.
+        return RedirectToAction("MascotasRegistradas");
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult MascotasRegistradas()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // Aquí puedes recuperar todas las mascotas registradas y mostrarlas.
+        return View();
     }
 }
