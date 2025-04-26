@@ -18,7 +18,7 @@ namespace SistemaAdopcionMascotas.Models
         public string Type { get; set; } = "";
 
         [Required]
-        public bool IsAdopted { get; set; } = false;
+        public bool IsAdopted { get; set; } = false; // Mascota no adoptada por defecto
 
         // Relación: una mascota puede tener una adopción
         public Adoption? Adoption { get; set; }

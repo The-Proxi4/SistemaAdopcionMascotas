@@ -15,7 +15,7 @@ namespace SistemaAdopcionMascotas.Models
 
         public DateTime AdoptionDate { get; set; } = DateTime.Now;
 
-        // Relaciones
+        // Relaciones :)
         public Pet Pet { get; set; }
         public Adopter Adopter { get; set; }
     }
